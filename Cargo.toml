@@ -26,3 +26,5 @@ serde_json = "1.0.117"
 sha2 = "0.10.8"
 tokio = { version = "1.38.0", features = ["tokio-macros", "rt", "full"] }
 toml = "0.7.6"
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"

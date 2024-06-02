@@ -9,6 +9,8 @@ use config::Config;
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    tracing_subscriber::fmt::init();
+
     let start_time = std::time::Instant::now();
     let matches = Cli::parse();
     let home = std::env::var("HOME").context("no $HOME set")?;
@@ -40,6 +42,6 @@ async fn main() -> Result<()> {
     }
     let end_time = std::time::Instant::now();
 
-    println!("command took {:?}", end_time - start_time);
+    tracing::debug!("command took {:?}",end_time - start_time);
     Ok(())
 }
